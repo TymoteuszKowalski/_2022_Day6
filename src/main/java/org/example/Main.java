@@ -3,6 +3,8 @@ package org.example;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -22,6 +24,10 @@ public class Main {
     }
 
     private static boolean wszystkieRozne(String s) {
-        return true;
+        Set<Character> set = new HashSet<>();
+        for (char c : s.toCharArray()) {
+            set.add(c);
+        }
+        return set.size() == s.length();
     }
 }
